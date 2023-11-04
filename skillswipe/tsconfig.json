@@ -1,0 +1,50 @@
+{
+  "compilerOptions": {
+    "ignoreDeprecations": "5.0",
+    "useUnknownInCatchVariables": false,
+    "target": "es6",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext",
+      "ES2022"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    },
+    "allowSyntheticDefaultImports": true,
+    "noImplicitThis": true,
+    "noImplicitAny": false,
+    "preserveConstEnums": true,
+    "removeComments": false,
+    "sourceMap": true,
+    "suppressImplicitAnyIndexErrors": true
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "src/components/header.tsxx",
+    "src/components/EditProfile",
+    "src/components/Profile",
+    "src/components/*",
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
