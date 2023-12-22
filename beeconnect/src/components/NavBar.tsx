@@ -8,10 +8,12 @@ import {
   Button,
   Collapse,
   Flex,
+  Heading,
   Icon,
   IconButton,
   InputGroup,
   InputRightElement,
+  Link,
   Menu,
   MenuButton,
   MenuItem,
@@ -32,6 +34,7 @@ import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import Search from './Search/Search'
 import NotificationCounter from './Util/NotificationCounter'
+import { motion } from 'framer-motion'
 
 export default function NavBar(props: any) {
   const { colorMode, toggleColorMode } = useColorMode()
@@ -93,6 +96,7 @@ export default function NavBar(props: any) {
   const languageOptions = [
     { label: 'English', value: 'en' },
     { label: 'Français', value: 'fr' },
+    { label: 'Arabic', value: 'ar' },
   ]
 
   const [profile, setProfile] = useState({
@@ -247,7 +251,7 @@ export default function NavBar(props: any) {
           paddingStart={'2em'}
           zIndex="99999"
         >
-          <Text
+          {/* <Text
             style={{ fontWeight: 'bold', fontSize: 25 }}
             ml={'15px'}
             onClick={() => {
@@ -255,7 +259,25 @@ export default function NavBar(props: any) {
             }}
           >
             SkillSwipe
-          </Text>
+          </Text> */}
+          <Heading fontSize='22px'>
+            <Link href={'/'} textDecoration='none' position={'relative'}>
+              <Box position={'absolute'} left={'0'}>🍯</Box>
+              <motion.div
+                animate={{
+                  x: [-2, 2, -2], // Animation loop between -2px and 2px
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity, // Repeat the animation infinitely
+                  repeatType: "reverse", // Reverse the animation after reaching the end
+                }}
+              >
+                <Box position={'absolute'} fontSize={'15px'} left={'15px'} transform={'rotate(-23deg)'} top={'-10px'}>🐝</Box>
+              </motion.div>
+              <Text marginLeft={'30px'}>BeeConnect</Text>
+            </Link>
+          </Heading>
           <NextLink href="#">
             <Button
               onClick={toggleColorMode}
@@ -276,12 +298,14 @@ export default function NavBar(props: any) {
             variant="outline"
             rounded="full"
             width="auto"
+            margin={'0 10px'}
             _hover={{
               cursor: 'pointer',
             }}
           >
             <option value="en">{t('english')} 🌍</option>
-            <option value="fr">{t('french')} 🌍</option>
+            {/* <option value="fr">{t('french')} 🌍</option> */}
+            <option value="ar">{t('arabic')} 🌍</option>
           </Select>
 
           <Search />

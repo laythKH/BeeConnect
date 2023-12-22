@@ -16,7 +16,7 @@ export class TokenDto {
 @Controller('auth')
 @ApiTags('Authentication')
 export class AuthController {
-  constructor (
+  constructor(
     private readonly userService: UsersService,
     private readonly authService: AuthService,
     private readonly connectionsService: ConnectionsService
@@ -25,14 +25,14 @@ export class AuthController {
   // login endpoint for user
   @Post('login')
   @ApiResponse({ type: Auth.LoginResponse })
-  public async login (@Body() body: Auth.LoginRequest): Promise<Auth.LoginResponse> {
+  public async login(@Body() body: Auth.LoginRequest): Promise<Auth.LoginResponse> {
     return await this.authService.login(body)
   }
 
   // register and then login endpoint for user
   @Post('register')
   @ApiResponse({ type: Auth.LoginResponse })
-  public async register (@Body() body: Auth.RegisterRequest): Promise<Auth.LoginResponse> {
+  public async register(@Body() body: Auth.RegisterRequest): Promise<Auth.LoginResponse> {
     try {
       // Will fail if email is NOT taken
       await this.userService.findOneByEmail(body.email)
@@ -46,19 +46,19 @@ export class AuthController {
     throw new ConflictException(`Email ${body.email} already taken`)
   }
 
-  @Post('google/redirect')
-  // @UseGuards(AuthGuard('google'))
-  async googleAuthRedirect (@Body() tokenDto: TokenDto): Promise<Auth.LoginResponse> {
-    const { token } = tokenDto
-    return await this.authService.googleLogin(token)
-  }
+  // @Post('google/redirect')
+  // // @UseGuards(AuthGuard('google'))
+  // async googleAuthRedirect (@Body() tokenDto: TokenDto): Promise<Auth.LoginResponse> {
+  //   const { token } = tokenDto
+  //   return await this.authService.googleLogin(token)
+  // }
 
   // get user info endpoint
   @Get('me')
   @ApiResponse({ type: User })
   @ApiBearerAuth()
   @UseGuards(JwtAuthGuard)
-  public async me (@AuthUser() authedUser: BearerPayload): Promise<User> {
+  public async me(@AuthUser() authedUser: BearerPayload): Promise<User> {
     const user: User = (await authedUser.getUser([
       'educations',
       'workExperiences',

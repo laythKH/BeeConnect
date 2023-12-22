@@ -6,14 +6,16 @@ import { GlobalErrorFilter } from './chat/exception.filter'
 import { ValidationPipe } from '@nestjs/common'
 // import { ValidationPipe } from '@nestjs/common'
 
-async function bootstrap (): Promise<void> {
+async function bootstrap(): Promise<void> {
   const app = await NestFactory.create(AppModule)
   process.env.NODE_ENV !== 'development'
     ? app.enableCors({
       origin: [
-        '*.skillswipe.app',
-        'https://skillswipe.app',
-        'https://www.skillswipe.app'
+        '*'
+        // '*.skillswipe.app',
+        // 'https://skillswipe.app',
+        // 'https://www.skillswipe.app',
+        // 'http://localhost:3000/'
       ],
       methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
       preflightContinue: false,

@@ -28,6 +28,7 @@ const Layout = ({ children }: any) => {
     if (token) {
       checkLogin(token)
         .then((response) => {
+          console.log(response);
           if (router.asPath == '/register' || router.asPath == '/') {
             actions.setUser(response.data)
             router.push('/home')

@@ -26,7 +26,7 @@ import Pusher from 'pusher-js'
 import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { toast } from 'react-toastify'
-import { getStaticProps } from '.'
+// import { getStaticProps } from '.'
 import Layout from '../components/Layout'
 import NavBar from '../components/NavBar'
 import {
@@ -44,7 +44,7 @@ import { px } from 'framer-motion'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { getAllConversation, getConversationById } from './api/chat'
 
-const Notifications = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Notifications = (_props: any) => {
   const [pendingConnections, setPendingConnections] = useState([
     { user: { id: '', firstName: '', lastName: '', profilePic: '', timestamp: '' } },
   ])

@@ -3,7 +3,7 @@ import { getRepositoryToken } from "@nestjs/typeorm";
 import { AuthService } from "./auth.service";
 import { User } from "../models/user.entity";
 import { JwtService } from "@nestjs/jwt";
-import { GoogleStrategy } from './google.strategy';
+// import { GoogleStrategy } from './google.strategy';
 import { UsersService } from '../users/users.service';
 
 describe("AuthService", () => {
@@ -48,7 +48,7 @@ describe("AuthService", () => {
         AuthService,
         JwtService,
         UsersService,
-        GoogleStrategy,
+        // GoogleStrategy,
         {
           provide: getRepositoryToken(User),
           useValue: mockUsersRepository,
@@ -80,7 +80,7 @@ describe("AuthService", () => {
     try {
       expect(await service.login({ email: "@gmail.com", password: "123" })).toThrowError;
     } catch (error) {
-   
+
     }
   });
 });

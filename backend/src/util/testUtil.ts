@@ -8,8 +8,8 @@ export function setupTestDB(): [DynamicModule] {
       type: 'sqlite',
       database: ':memory:',
       dropSchema: true,
-      // 	name: process.env.DB_NAME,
-      //   	username: process.env.DB_USERNAME,
+      // name: process.env.DB_NAME,
+      // username: process.env.DB_USERNAME,
 
       entities: ['dist/models/**/*.entity.{ts,js}'],
       synchronize: true

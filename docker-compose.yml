@@ -9,7 +9,7 @@ services:
     links:
       - backend
     volumes:
-      - ./skillswipe:/usr/src/app
+      - ./beeconnect:/usr/src/app
     ports:
       - "${FPORT}:3000"
     # command: "nodemon"

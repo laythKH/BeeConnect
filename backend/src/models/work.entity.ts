@@ -14,34 +14,34 @@ import { User } from './user.entity'
 export class Work extends BaseEntity {
   @PrimaryGeneratedColumn()
   @ApiProperty()
-    id: number
+  id: number
 
   @Column()
   @ApiProperty()
-    company: string
+  company: string
 
   @Column()
   @ApiProperty()
-    title: string
+  title: string
 
   @Column()
   @ApiProperty()
-    start_year: number
+  start_year: number
 
   @Column()
   @ApiProperty()
-    end_year: number
+  end_year: number
 
   @CreateDateColumn()
   @ApiProperty()
-    created_at: Date
+  created_at: Date
 
   @UpdateDateColumn()
   @ApiProperty()
-    updated_at: Date
+  updated_at: Date
 
   // RELATIONS
   @ManyToOne(() => User, (u) => u.workExperiences)
   @ApiProperty({ type: () => User })
-    user: User
+  user: User
 }

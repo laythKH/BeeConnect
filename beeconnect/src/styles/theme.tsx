@@ -5,7 +5,9 @@ export const mytheme = extendTheme({
     brand: {
       100: '#f7fafc',
       900: '#1a202c',
+      // 900: '#D4AF37',
     },
+    // #1A202C
   },
   fonts: {
     heading: 'Inter',
@@ -20,3 +22,8 @@ export const mytheme = extendTheme({
     },
   },
 })
+
+
+
+
+// backgroundColor: '#D4AF37',

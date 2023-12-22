@@ -1,3 +1,4 @@
+
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import type { DocumentProps } from 'next/document'
 import Document, { Head, Html, Main, NextScript } from 'next/document'
@@ -12,8 +13,11 @@ class MyDocument extends Document<Props> {
     const currentLocale = this.props.locale
     const { i18n } = i18nextConfig
 
+    console.log(`language ====> ${currentLocale}`);
+    console.log(`is arabic ${currentLocale === 'ar'}`);
+
     return (
-      <Html lang={currentLocale}>
+      <Html lang={currentLocale} dir={currentLocale === 'ar' ? 'rtl' : 'ltr'}>
         <Head />
         <body>
           <Main />

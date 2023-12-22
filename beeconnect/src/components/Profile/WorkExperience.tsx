@@ -24,7 +24,7 @@ const WorkExperience = ({ experience }: any) => {
         <br></br>
       </chakra.h3>
       {experience.map((milestone: any, index: any) => (
-        <Flex key={index} mb="10px">
+        <Flex key={index} mb="10px" flexDirection={'column'}>
           {/* Desktop view(left card) */}
           {isDesktop && index % 2 === 0 && (
             <>
