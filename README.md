@@ -12,11 +12,11 @@ This project is build like Linkedin Clone. But in another design. also for train
 
 ## Team 1 - members:
 
-| Name              | Student ID | GitHub Page                                       |
+| Name              | NameID     | GitHub Page                                       |
 | ----------------- | ---------- | ------------------------------------------------- |
-| Laith Khlaf       | 40110036   |   |
-| Abd Alhossn       | 40131284   |   |
-| Layth Alkhoury    | 40152977   |   |
+| Laith Khlaf       |    |       |
+| Abd Alhossn       |    |       |
+| Layth Alkhoury    | laythKH    |   [laythKH](https://github.com/laythKH)           |
 
 
 <br />
