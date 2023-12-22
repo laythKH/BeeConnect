@@ -8,7 +8,7 @@ import PersonalProjectsBox from '@/components/EditProfile/PersonalProjectsBox'
 import SkillsBox from '@/components/EditProfile/SkillsBox'
 import VolunteeringBox from '@/components/EditProfile/VolunteeringBox'
 import Layout from '@/components/Layout'
-import NavBar from '@/components/NavBar'
+import NavBar from '@/components/NavBar';
 import { Box, Heading, Stack } from '@chakra-ui/react'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
